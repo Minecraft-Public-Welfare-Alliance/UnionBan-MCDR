@@ -32,7 +32,7 @@ MPWAUnionBan:
 ## 命令
 
 -   `!!uban <playerID> <Reason> <Reason_Text> <isOnline> <from>` 
-对具有指定详细信息的玩家进行封禁。`<playerID>` 是要封禁的玩家的 ID，`<Reason>` 是封禁的原因（选项：hacking、stealing、destroying、other），`<Reason_Text>` 是关于封禁的详细信息，`<isOnline>` 是一个布尔值，表示玩家当前是否是在线玩家（正版）。
+对具有指定详细信息的玩家进行封禁。`<playerID>` 是要封禁的玩家的 ID，`<Reason>` 是封禁的原因（选项：hacking、stealing、destroying、other），`<Reason_Text>` 是关于封禁的详细信息，`<isOnline>` 是一个布尔值，表示玩家当前是否是在线玩家（正版），`from`是服务器名。
 例子：`!!uban IamHackerTest hacking "开自动挖矿" true`
 -   `!!reload` 
 重新加载插件配置。

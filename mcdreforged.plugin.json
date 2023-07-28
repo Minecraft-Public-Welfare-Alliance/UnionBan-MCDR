@@ -1,0 +1,11 @@
+{
+    "id": "mpwa_union_ban",
+    "version": "1.0.0",
+    "name": "MPWA UnionBan",
+    "description": "MPWA联盟联合封禁 MCDR版",
+    "author": "BaimoQilin",
+    "link": "https://github.com/Minecraft-Public-Welfare-Alliance/UnionBan-MCDR",
+    "dependencies": {
+       "mcdreforged": ">=2.0.0-alpha.1"
+    }
+}

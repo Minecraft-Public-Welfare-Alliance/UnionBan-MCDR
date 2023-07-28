@@ -71,6 +71,7 @@ def uban_command(source, args):
     reason = args[1]
     reason_text = args[2]
     is_online = args[3].lower() == 'true'
+    _from = args[4].lower() == 'unknown'
 
 	try:
     	player_ip = source.get_player(player_id).player.ping.ip
@@ -85,7 +86,7 @@ def uban_command(source, args):
     )
     
     # Add the new row to the database
-    db.add_row(player_id, player_ip, reason, reason_text, is_online, source.player)
+    db.add_row(player_id, player_ip, reason, reason_text, is_online, _from)
     
     # Optionally, ban the player immediately
     if is_online:
@@ -128,7 +129,9 @@ def on_load(server, old):
             TextArgument('playerID').then(
                 TextArgument('Reason', ['hacking', 'stealing', 'destroying', 'other']).then(
                     GreedyTextArgument('Reason_Text').then(
-                        BoolArgument('isOnline').runs(uban_command)
+                        BoolArgument('isOnline').then(
+                            TextArgument('from').runs(uban_command)
+                        )
                     )
                 )
             )
